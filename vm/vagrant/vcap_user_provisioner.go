@@ -147,7 +147,7 @@ func (p VCAPUserProvisioner) configureLocalesWithDpkg() (bool, error) {
 		return true, err
 	}
 
-	_, _, _, err = p.runner.RunCommand("dpkg-reconfigure", "locales")
+	_, _, _, err = p.runner.RunCommand("dpkg-reconfigure", "-fnoninteractive", "locales")
 	if err != nil {
 		return true, err
 	}
